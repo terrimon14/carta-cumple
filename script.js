@@ -5,6 +5,7 @@ const closeBtn = document.getElementById("close-btn");
 const heartsContainer = document.getElementById("hearts-container");
 const floatingHearts = document.getElementById("floating-hearts");
 
+// Corazones cayendo aleatoriamente (efecto lluvia)
 function createFallingHeart() {
     const heart = document.createElement("i");
     heart.className = "fas fa-heart heart-fall";
@@ -18,6 +19,7 @@ function createFallingHeart() {
     });
 }
 
+// Corazones flotantes en posiciones aleatorias (solo animación de fondo)
 function createFloatingHeart() {
     const heart = document.createElement("i");
     heart.className = "fas fa-heart floating-heart";
@@ -80,7 +82,38 @@ fullscreenLetter.addEventListener("click", (e) => {
     }
 });
 
-// Iniciar la lluvia de corazones desde el inicio (si quieres que ya haya corazones cayendo)
+// Iniciar la lluvia de corazones desde el inicio
 window.addEventListener('load', () => {
     startHearts();
 });
+
+
+// NUEVO: Corazones que siguen el dedo o mouse al mover o tocar la pantalla
+function createHeartAt(x, y) {
+    const heart = document.createElement('i');
+    heart.className = 'fas fa-heart floating-heart';
+    heart.style.left = `${x}px`;
+    heart.style.top = `${y}px`;
+    heart.style.position = 'fixed';
+    heart.style.pointerEvents = 'none';
+    heart.style.animationDuration = 4000 + Math.random() * 2000 + 'ms';
+    floatingHearts.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+function onPointerMove(e) {
+    if (e.touches) {
+        for (let touch of e.touches) {
+            createHeartAt(touch.clientX, touch.clientY);
+        }
+    } else {
+        createHeartAt(e.clientX, e.clientY);
+    }
+}
+
+// Escuchar movimientos
+window.addEventListener('mousemove', onPointerMove);
+window.addEventListener('touchmove', onPointerMove, { passive: true });
