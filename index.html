@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Para Poleth - Carta Especial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <!-- Fondo animado de galaxia en video -->
+    <video autoplay loop muted playsinline id="background-video" preload="auto">
+        <source src="cielo.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Título flotante -->
+    <div class="header">
+        <h1>Para Ti, <span class="special-name floating">Pendeja</span></h1>
+    </div>
+
+    <!-- Sobre interactivo -->
+    <div class="envelope-wrapper" id="envelope-wrapper" title="Haz clic para abrir">
+        <div class="envelope" id="envelope">
+            <div class="envelope-front">
+                <div class="envelope-flap"></div>
+                <i class="fas fa-heart" style="color: white; font-size: 3rem; animation: pulse 1.5s infinite"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Carta a pantalla completa -->
+    <div class="fullscreen-letter" id="fullscreen-letter">
+        <div class="close-btn" id="close-btn">×</div>
+        <div class="paper-texture"></div>
+        <div class="fullscreen-letter-content">
+            <h2>Querida Poleth</h2>
+            <p>
+                Poleth, hoy el mundo celebra a alguien tan única como tú.<br />
+                Con esos ojos que guardan galaxias enteras,<br />
+                un pequeño universo donde el tiempo se detiene para admirar su brillo infinito,<br />
+                y ese cabello dorado que baila como fuego al sol... ✨
+            </p>
+            <p>
+                Eres como un anime bien hecho:<br />
+                con momentos tiernos, risas inesperadas, peleas épicas… y un corazón gigante. 💖
+            </p>
+            <p>
+                Gracias por las conversaciones eternas,<br />
+                las películas en las que hablamos más que los actores,<br />
+                y los juegos en el móvil que se convierten en pequeñas aventuras. 🎮🍿
+            </p>
+            <p>
+                Tú con tu pasión por el fútbol,<br />
+                yo con mi amor por la F1,<br />
+                y los dos gritando cuando suena una entrada en WWE.<br />
+                ¡Nada nos hace más fans que ver un buen combate o celebrar un buen gol! ⚽🏎️💥
+            </p>
+            <p>
+                Y yo te miro y pienso:<br />
+                “¿Cómo alguien puede brillar tanto solo siendo ella misma?” 🌟
+            </p>
+            <p>
+                Que este nuevo año de vida te traiga<br />
+                más goles que penas,<br />
+                más podios que caídas,<br />
+                más dulces que spoilers,<br />
+                y más momentos épicos que cualquier evento de WrestleMania 😄🎉
+            </p>
+            <p>
+                Y que nunca olvides esto:<br />
+                tienes un impacto real en las personas que te rodean.<br />
+                El mundo —literalmente— es más bonito contigo en él. 🎈
+            </p>
+            <div class="signature">Con cariño, [Tu Nombre]</div>
+        </div>
+    </div>
+
+    <!-- Corazones -->
+    <div class="hearts-container" id="hearts-container"></div>
+    <div class="floating-hearts" id="floating-hearts"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
